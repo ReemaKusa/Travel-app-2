@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Styling Variables
+$defaultFont: 'Roboto Condensed', sans-serif;
+$lightBlue: #03A9F4;
+$midGrey: #aaa;
+$lightGrey: #eee;
+$white: #fff;
+
+// Main Structure
+html {
+    scroll-behavior: smooth;
+
+    body {
+        font-family: $defaultFont;
+        background-color: $white;
+        padding: 0;
+        margin: 0;
+
+        a {
+            color: $lightBlue;
+            transition: 0.3;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        ::-webkit-input-placeholder { /* Edge */
+            color: $white;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: $white;
+        }
+
+        ::placeholder {
+            color: $white;
+        }
+    }
+}
+
+/* Header */
+header {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo img {
+        width: 120px;
+        margin-top: 80px;
+    }
+}
+
+/* General */
+.basic-flexbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.print-area,
+.buttons {
+    display: none;
+}
+
+.print-area {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+/* Form Input */
+.form-input-outer-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $midGrey;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)),
+    url('../img/top-img.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 5px;
+
+    .form-input-inner-wrapper {
+        padding: 250px 50px 50px;
+        max-width: 900px;
+        margin: 0 auto;
+
+        input,
+        input[type='text'],
+        input[type='date'],
+        textarea {
+            width: 100%;
+            background-color: transparent;
+            color: $white;
+            font-family: $defaultFont;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 3px;
+            padding: 14px 12px;
+            box-sizing: border-box;
+            outline: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid #fff;
+            border-left: none;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .icon-wrapper {
+            width: 60px;
+
+            .material-icons {
+                width: 60px;
+                color: $lightBlue;
+                text-align: center;
+            }
+        }
+    }
+
+    input[type='submit'] {
+        width: 100%;
+        color: $white;
+        font-family: $defaultFont;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 3px;
+        padding: 14px 12px;
+        background-color: $lightBlue;
+        border: 1px solid $lightBlue;
+        border-radius: 50px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            box-shadow: 2px 2px 40px 0 #fff;
+        }
+    }
+
+    .process-message {
+        color: $lightBlue;
+        text-align: right;
+        font-style: italic;
+        letter-spacing: 2px;
+        transition: 0.8s;
+    }
+}
+
+/* Form Output */
+.form-output-outer-wrapper {
+    background: rgba(255,255,255,0.5);
+    padding: 8%;
+    transition: 0.8s;
+
+    .form-output-inner-wrapper {
+        overflow: auto;
+        background-color: $white;
+        border: 1px solid $lightGrey;
+
+        .destination-meta {
+            color: $white;
+            text-align: center;
+            background-color: $midGrey;
+            background-size: cover;
+            padding: 15%;
+
+            .material-icons {
+                width: 100%;
+                color: $lightBlue;
+                font-size: 2.8em;
+                margin-bottom: 12px;
+            }
+
+            #destination-name {
+                font-size: 3.2em;
+                font-weight: bold;
+                margin-bottom: 12px;
+            }
+
+            #country-name {
+                font-size: 1.1em;
+                text-transform: uppercase;
+                letter-spacing: 6px;
+            }
+
+            .more-info {
+                width: 100%;
+                margin: 35px auto 0;
+                overflow: auto;
+
+                .sub-item {
+                    width: 30%;
+                    float: left;
+
+                    #destination-description {
+                        font-size: 1.1em;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Dates */
+.dates-wrapper {
+    padding: 90px 0 0;
+
+    .trip-day {
+        text-align: center;
+
+        #counter {
+            width: 140px;
+            color: $lightBlue;
+            font-size: 4em;
+            line-height: 140px;
+            border: 1px solid $lightBlue;
+            border-radius: 100%;
+            margin: 0 auto 20px;
+        }
+
+        #counter-text {
+            letter-spacing: 6px;
+            margin-bottom: 22px;
+        }
+    }
+
+    .date-wrapper {
+        max-width: 550px;
+        text-align: center;
+        padding-top: 20px;
+
+        .heading {
+            color: $lightBlue;
+            font-size: 1.2em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .output-date {
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 6px;
+        }
+    }
+
+    .material-icons {
+        color: $lightBlue;
+    }
+}
+
+/* Weather */
+.weather-wrapper {
+    padding: 100px 60px 0;
+    overflow: auto;
+
+    .weather-message {
+        color: $midGrey;
+        text-align: center;
+    }
+
+    .weather-card {
+        width: 25%;
+        float: left;
+        text-align: center;
+
+        img {
+            width: 90px;
+        }
+
+        .temp {
+            font-size: 1.1em;
+        }
+
+        .material-icons {
+            color: $lightBlue;
+        }
+
+        .temp-date {
+            font-weight: bold;
+            padding: 20px 0;
+        }
+    }
+}
+
+/* Remarks */
+.remarks-wrapper {
+    padding: 75px 60px 140px;
+
+    .remarks {
+        width: 100%;
+        padding: 0 25px;
+
+        .material-icons {
+            width: 7%;
+            display: block;
+            float: left;
+            color: $lightBlue;
+            font-size: 1.4em;
+        }
+
+        #remarks {
+            width: 93%;
+            display: block;
+            float: left;
+            font-size: 1.1em;
+            letter-spacing: 6px;
+        }
+    }
+}
+
+/* Buttons */
+.buttons {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    flex-direction: column;
+
+    button {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+        transition: 0.8em;
+    }
+
+    .close-button {
+        background: $white;
+        border: 1px solid $white;
+        box-shadow: 0 0 20px $midGrey;
+        margin-bottom: 12px;
+
+        .material-icons {
+            font-size: 1.8em;
+            color: $lightBlue;
+        }
+    }
+
+    .print-button {
+        background: $lightBlue;
+        border: 1px solid $lightBlue;
+        box-shadow: 0 0 20px $midGrey;
+
+        .material-icons {
+            font-size: 1.8em;
+            color: $white;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    clear: both;
+    overflow: auto;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: $midGrey;
+    padding: 60px 0;
+
+    p {
+        font-size: 16px;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+/* Media Queries */
+@media only screen and (max-width: 980px) {
+
+    .remarks-wrapper .remarks .material-icons {
+        width: 10%;
+    }
+
+    .remarks-wrapper .remarks #remarks {
+        width: 90%;
+    }
+
+    .footer-wrapper {
+        flex-direction: column;
+        text-align: center;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .basic-flexbox {
+        flex-direction: column;
+    }
+
+    .form-output-outer-wrapper .form-output-inner-wrapper .destination-meta .more-info .sub-item {
+        width: 50%;
+        margin-bottom: 12px;
+    }
+
+    #output-dates .material-icons {
+        display: none;
+    }
+
+    .weather-wrapper .weather-card {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+
+    .form-input-outer-wrapper .form-input-inner-wrapper input,
+    .form-input-outer-wrapper .form-input-inner-wrapper input[type=date],
+    .form-input-outer-wrapper .form-input-inner-wrapper input[type=text],
+    .form-input-outer-wrapper .form-input-inner-wrapper textarea {
+        letter-spacing: 2px;
+    }
+
+    #country-code,
+    #time-zone,
+    #population,
+    .form-output-outer-wrapper .form-output-inner-wrapper .destination-meta .more-info .sub-item #destination-description {
+        font-size: 0.9em;
+    }
+
+    .dates-wrapper .date-wrapper .output-date {
+        font-size: 2em;
+        letter-spacing: 3px;
+    }
+
+    .weather-wrapper .weather-card .temp {
+        font-size: 0.8em;
+    }
+
+    .weather-wrapper .weather-card .material-icons {
+        font-size: 1.4em;
+    }
+
+    .remarks-wrapper {
+        padding-right: 20px;
+        padding-left: 20px;
+
+        .remarks #remarks {
+            letter-spacing: 0;
+        }
+    }
+}
+#data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 50px 20px;
+    margin: 20px 0;
+
+    img {
+        width: 100%;
+        max-width: 600px; /* Ensure images aren't too large */
+        margin-bottom: 20px; /* Add some spacing below the image */
+    }
+
+    h2 {
+        margin-bottom: 40px;
+        font-size: 48px;
+        text-align: center;
+        color: #03A9F4;
+        font-weight: 900;
+        letter-spacing: 1px; /* Added some letter-spacing for better readability */
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 26px; /* Reduced font-size for better readability */
+        line-height: 1.5;
+        text-align: center;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: #ff9900;
+        }
+    }
+}
