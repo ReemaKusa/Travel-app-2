@@ -1,9 +1,11 @@
-const json = require('../../server/mockAPI');
+//src\client\__test__\mockAPI.test.js
 
-test('check mockAPI content at server side', () => {
+const mockData = require('../../server/mockAPI').default;
 
-    expect(json.title).toBe('test json response');
-    expect(json.message).toContain('testing');
-    expect(json.time).toHaveLength(3);
+test('verify mockAPI data on the server', () => {
+
+    expect(mockData.title).toBe('test json response');
+    expect(mockData.message).toMatch(/testing/);
+    expect(mockData.time.length).toBe(3);
 
 });

@@ -1,17 +1,21 @@
-import { processForm } from './js/formHandler';
-import { currentDate } from './js/currentDateChecker';
-import { minDate } from './js/minDateChecker';
-import { dayDiffCheck } from './js/dayDiffChecker';
+//src\client\index.js
+
+import { handleFormSubmission } from './js/handleFormSubmission';
+import { getCurrentDate } from './js/getCurrentDate';
+import { isMinDateValid } from './js/isMinDateValid';
+import { calculateDayDifference } from './js/calculateDayDifference';
 import { printButton } from './js/printButton';
 import { closeButton } from './js/closeButton';
 
-import './styles/main.scss';
+import './styles/style.scss';
 
 export {
-    processForm,
-    currentDate,
-    minDate,
-    dayDiffCheck,
+
+    handleFormSubmission,
+    getCurrentDate,
+    isMinDateValid,
+    calculateDayDifference,
     printButton,
     closeButton
+
 }

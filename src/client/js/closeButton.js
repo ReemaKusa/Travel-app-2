@@ -1,14 +1,15 @@
-// Close Button
+//src\client\js\closeButton.js
 
 export function closeButton() {
 
-    document.body.scrollTop = 0; // Safari
-    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE and Opera
+    // Reset scroll position for different browsers
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
 
-    const outputOuter = document.querySelector('.print-area');
-    const closeButton = document.querySelector('.buttons');
+    const outputContainer = document.querySelector('.print-area');
+    const buttonContainer = document.querySelector('.buttons');
 
-    outputOuter.style.display = 'none';
-    closeButton.style.display = 'none';
+    outputContainer.style.display = 'none';
+    buttonContainer.style.display = 'none';
 
 }

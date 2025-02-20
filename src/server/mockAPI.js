@@ -1,9 +1,9 @@
-// Mock API
+//src\server\mockAPI.js
 
-let json = {
-    'title': 'test json response',
-    'message': 'this is a testing message',
-    'time': 'now'
-}
+const jsonResponse = {
+    title: "test json response",
+    message: "this is a testing message",
+    time: "now"
+};
 
-module.exports = json
+module.exports = jsonResponse;

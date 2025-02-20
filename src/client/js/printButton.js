@@ -1,20 +1,10 @@
-// Print Button
+//src\client\js\printButton.js
 
 export function printButton() {
+    const printContent = document.querySelector('.print-area').innerHTML;
+    const originalContent = document.body.innerHTML;
 
-    // Print Area
-    const formOutput = document.querySelector('.print-area').innerHTML;
-
-    // Original Window Body
-    const originalWindowBody = document.body.innerHTML;
-
-    // Execute Original Window Body = Print Area
-    document.body.innerHTML = formOutput;
-
-    // Print Function
+    document.body.innerHTML = printContent;
     window.print();
-
-    // Return to Original Window Body
-    document.body.innerHTML = originalWindowBody;
-
+    document.body.innerHTML = originalContent;
 }

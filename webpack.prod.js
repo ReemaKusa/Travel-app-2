@@ -1,4 +1,5 @@
-//
+//webpack.prod.js
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
