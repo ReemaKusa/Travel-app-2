@@ -87,11 +87,11 @@ npm test
 
 Build Production Files:
 
-npm run build-prod
+npm run build
 
 Start the Local Server:
 
-npm run start
+npm start
 
 Access the Application:
 
