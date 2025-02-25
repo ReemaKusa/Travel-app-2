@@ -1,6 +1,6 @@
 //src\client\__test__\mockAPI.test.js
 
-const mockData = require('../../server/mockAPI').default;
+const mockData = require('../../server/mockAPI');
 
 test('verify mockAPI data on the server', () => {
 

@@ -109,10 +109,10 @@ export async function handleFormSubmission(event) {
 
         // Render trip details with the extracted data
         displayTripDetails(locationDetails, weatherData, images, departureDate, returnDate, tripDuration);
-           
+
     } catch (error) {
-        console.error('Error:', error.message);
-        alert('An error occurred while processing your request. Please try again.');
+        console.error('Error:', error);
+        alert('An error occurred while processing your request. Please try again.',error);
         processingMessage.innerHTML = '';
     }
 }

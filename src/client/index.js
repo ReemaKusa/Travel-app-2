@@ -10,12 +10,10 @@ import { closeButton } from './js/closeButton';
 import './styles/style.scss';
 
 export {
-
     handleFormSubmission,
     getCurrentDate,
     isMinDateValid,
     calculateDayDifference,
     printButton,
     closeButton
-
 }
