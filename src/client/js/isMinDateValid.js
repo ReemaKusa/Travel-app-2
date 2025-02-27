@@ -1,9 +1,6 @@
 //src\client\js\isMinDateValid.js
 
-/*export function isMinDateValid(inputDate) {
-    return inputDate >= Client.getCurrentDate();
-}
-*/
+import { getCurrentDate } from './getCurrentDate.js';
 
 export function isMinDateValid(inputDate) {
     return inputDate >= getCurrentDate();

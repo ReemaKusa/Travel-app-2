@@ -36,17 +36,23 @@ app.get('/test', (req, res) => res.send(mockAPIResponse));
 
 app.post('/all-apis', async (req, res) => {
     try {
-        const userInput = req.body.destinationInput;
+        const userInput = req.body.destination;
         console.log(`User destination input: ${userInput}`);
 
         // Use environment variable for Geonames API key
         const geonamesAPI = `http://api.geonames.org/searchJSON?q=${userInput}&maxRows=1&username=${process.env.GEONAMES_USER}`;
         console.log(geonamesAPI);
 
-        const geonamesData = await fetch(geonamesAPI).then(res => res.json());
-        if (!geonamesData.geonames || geonamesData.geonames.length === 0) {
+       // const geonamesData = await fetch(geonamesAPI).then(res => res.json());
+       // if (!geonamesData.geonames || geonamesData.geonames.length === 0) {
+       //     return res.status(404).json({ locValidation: 'Invalid location name, please re-enter.' });
+       // }
+
+        const geonamesData = await fetch(geonamesAPI).then(res => res.json()).catch(err => console.error("Geonames API error:", err));
+        if (!geonamesData || !geonamesData.geonames || geonamesData.geonames.length === 0) {
             return res.status(404).json({ locValidation: 'Invalid location name, please re-enter.' });
         }
+        
 
         const { lat, lng } = geonamesData.geonames[0];
 

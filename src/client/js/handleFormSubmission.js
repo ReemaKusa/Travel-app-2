@@ -100,7 +100,7 @@ export async function handleFormSubmission(event) {
         console.log("Weather Data: ", weatherData);
         const images = responseData.pixabayData.hits;
         console.log("Location Images: ", images);
-        const tripDuration = calculateDaysBetween(departureDate, returnDate);
+        const tripDuration = calculateDaysBetween(departureDate, returnDate) + 1; // Add 1 to include the return date
         console.log("Trip Duration: ", departureDate, returnDate, tripDuration);
         const countdownToTrip = calculateDaysBetween(getCurrentDate(), departureDate);
         console.log("Days Until Trip: ", countdownToTrip);
