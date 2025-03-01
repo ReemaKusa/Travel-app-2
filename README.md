@@ -1,4 +1,4 @@
-Travel App Project
+# Travel App Project
 
 This repository contains the source code for the Travel App Project, a web application that helps users plan trips by providing weather forecasts, location images, and other travel-related information.
 
@@ -77,23 +77,27 @@ Move the .env File:
 
 Ensure the .env file is placed in the root directory of the project.
 
-Install Dependencies:
+- Install Dependencies:
 
 npm install
 
-Run Tests:
+- Run Tests:
 
 npm test
 
-Build Production Files:
+- Check test coverage
+
+npm test -- --coverage
+
+- Build Production Files:
 
 npm run build
 
-Start the Local Server:
+- Start the Local Server:
 
 npm start
 
-Access the Application:
+- Access the Application:
 
 Open your browser and navigate to:
 
